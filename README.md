@@ -33,6 +33,10 @@ using any TCP client:
 
 % ntmux *port* *command-and-args...*
 
+## Demo
+
+<iframe width="420" height="315" src="//www.youtube.com/embed/dKNr3rk58YI" frameborder="0" allowfullscreen></iframe>
+
 ## License
 
 Copyright (c) 2014 Yoshinori Kohyama.  Distributed under the BSD 3-Clause License.  See the file LICENSE.md.
