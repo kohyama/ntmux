@@ -35,7 +35,7 @@ using any TCP client:
 
 ## Demo
 
-<iframe width="420" height="315" src="//www.youtube.com/embed/dKNr3rk58YI" frameborder="0" allowfullscreen></iframe>
+http://www.youtube.com/embed/dKNr3rk58YI"
 
 ## License
 
