@@ -35,7 +35,7 @@ using any TCP client:
 
 ## Demo
 
-http://www.youtube.com/embed/dKNr3rk58YI"
+http://www.youtube.com/embed/dKNr3rk58YI
 
 ## License
 
