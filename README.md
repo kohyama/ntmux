@@ -33,9 +33,20 @@ using any TCP client:
 
 % ntmux *port* *command-and-args...*
 
+## Disclaimer
+
+Currently tested only under
+
+    % uname -pv
+    Darwin Kernel Version 13.1.0: Thu Jan 16 19:40:37 PST 2014; root:xnu-2422.90.20~2/RELEASE_X86_64 i386
+    % cc --version
+    Apple LLVM version 5.0 (clang-500.2.79) (based on LLVM 3.3svn)
+    Target: x86_64-apple-darwin13.1.0
+    Thread model: posix
+
 ## Demo
 
-http://www.youtube.com/embed/dKNr3rk58YI
+<a href="https://www.youtube.com/watch?v=dKNr3rk58YI">![ss 2014-03-06 21.38.02.png](https://qiita-image-store.s3.amazonaws.com/0/12593/20ebc62f-a085-d708-143b-c49fde705802.png "ss 2014-03-06 21.38.02.png")</a>
 
 ## License
 
