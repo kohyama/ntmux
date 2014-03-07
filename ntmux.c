@@ -144,7 +144,7 @@ main(int argc, char *argv[])
   struct winsize w;
 
   if (argc < 3) {
-    fprintf(stderr, "Usage: eet <port> command args ...");
+    fprintf(stderr, "Usage: ntmux <port> command args ...");
     exit(1);
   }
 
@@ -158,7 +158,7 @@ main(int argc, char *argv[])
 
   switch (forkpty(&master, NULL, &t, &w)) {
   case -1:
-    err(1, "fork");
+    err(1, "forkpty");
   case 0:
     execvp(argv[2], argv + 2);
   default:
