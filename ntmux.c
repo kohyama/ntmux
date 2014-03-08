@@ -15,7 +15,7 @@
 #include <errno.h>      /* EINITR */
 #include <fcntl.h>      /* fcntl(2) */
 #include <signal.h>     /* sigaction(2) */
-#include <stdio.h>      /* BUFSIZ, perror(3) */
+#include <stdio.h>      /* BUFSIZ */
 #include <stdlib.h>     /* system(3), atoi(3), exit(3), malloc(3), free(3) */
 #include <string.h>     /* memcpy(3), strcpy(3) */
 #include <termios.h>    /* tcgetattr(3) */
@@ -160,7 +160,8 @@ main(int argc, char *argv[])
   case -1:
     err(1, "forkpty");
   case 0:
-    execvp(argv[2], argv + 2);
+    if (execvp(argv[2], argv + 2) < 0)
+      err(1, "execvp");
   default:
     t.c_lflag &= ~(ECHO|ICANON);
     t.c_cc[VTIME] = 0;
