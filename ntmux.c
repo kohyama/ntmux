@@ -42,11 +42,12 @@ server(int port, int pty)
   fd_set fds, tfds;
   int nc = 0; /* num of clients */
   int ss;     /* server socket */
+  int cs;     /* client socket */
   struct _cs {
     struct _cs *prev;
     struct _cs *next;
     int cs;
-  } css = {NULL, NULL, -1}; /* client sockets */
+  } css = {NULL, NULL, -1}; /* list of client sockets */
   struct _cs *csp, *tcsp;
   int m;      /* max # of file descriters to be read */
   int i, n, yes = 1;
@@ -120,12 +121,13 @@ server(int port, int pty)
 
     /* new client connection */
     if (FD_ISSET(ss, &tfds)) {
-      csp = (struct _cs *)malloc(sizeof(struct _cs));
-      if ((csp->cs = accept(ss, (struct sockaddr *)&addr, &addrlen)) < 0) {
+      if ((cs = accept(ss, (struct sockaddr *)&addr, &addrlen)) < 0) {
         if (errno == EINTR)
           continue;
         err(1, "accept");
       }
+      csp = (struct _cs *)malloc(sizeof(struct _cs));
+      csp->cs = cs;
       FD_SET(csp->cs, &fds);
       tcsp = css.next;
       css.next = csp;
