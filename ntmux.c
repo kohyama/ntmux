@@ -21,7 +21,7 @@
 #include <termios.h>    /* tcgetattr(3) */
 #include <unistd.h>     /* pipe(2), fork(2), dup2(2), close(2), execvp(3),
                            read(2), write(2)  */
-#include <util.h>       /* forkpty(3) */
+#include <pty.h>       /* forkpty(3) */
 
 static void
 reapchild(int signo)
