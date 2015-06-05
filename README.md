@@ -42,6 +42,8 @@ $ make install  # Install to /usr/bin
 Currently tested only under
 
 OSX
+
+```
     % uname -pv
     Darwin Kernel Version 13.1.0: Thu Jan 16 19:40:37 PST 2014; root:xnu-2422.90.20~2/RELEASE_X86_64 i386
     
@@ -49,8 +51,11 @@ OSX
     Apple LLVM version 5.0 (clang-500.2.79) (based on LLVM 3.3svn)
     Target: x86_64-apple-darwin13.1.0
     Thread model: posix
+```
 
 LINUX
+
+```
     $ uname -a
     Linux tux-I3000 3.13.0-36-generic #63-Ubuntu SMP Wed Sep 3 21:30:45 UTC 2014 i686 i686 i686 GNU/Linux
     
@@ -59,6 +64,7 @@ LINUX
     Copyright (C) 2013 Free Software Foundation, Inc.
     This is free software; see the source for copying conditions.  There is NO
     warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+```
 
 ## Demo
 
