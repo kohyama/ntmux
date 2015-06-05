@@ -26,7 +26,7 @@ using any TCP client:
 
 ## Compile and install
 
-Edit the Makefile
+Edit the Makefile and run the following commands.
     
 ```bash
 $ make          # Build for OSX or Linux automatically
@@ -36,6 +36,12 @@ $ make install  # Install to /usr/bin
 ## Usage
 
 % ntmux *port* *command-and-args...*
+
+Examples:
+```
+$ ntmux 5000 ocaml
+$ ntmux 5000 rlwrap scheme
+```
 
 ## Disclaimer
 
