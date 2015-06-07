@@ -76,6 +76,40 @@ LINUX
 
 <a href="https://www.youtube.com/watch?v=dKNr3rk58YI">![ss 2014-03-06 21.38.02.png](https://qiita-image-store.s3.amazonaws.com/0/12593/20ebc62f-a085-d708-143b-c49fde705802.png "ss 2014-03-06 21.38.02.png")</a>
 
+
+## VIM Code
+
+See also: 
+
+* [Multi-lingual development using Ntmux](https://translate.google.com/translate?sl=ja&tl=en&js=y&prev=_t&hl=en&ie=UTF-8&u=http%3A%2F%2Fqiita.com%2Fkohyama%2Fitems%2Fd2399fd1d58cd8aec72a&edit-text=)
+* [Multi-lingual development using Ntmux - Japanese](http://qiita.com/kohyama/items/d2399fd1d58cd8aec72a)
+
+File: ntmux.vim
+
+```vim
+function! Send(host, port, msg)
+  python <<EOF
+import vim
+import socket
+cs = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+cs.connect((vim.eval('a:host'), int(vim.eval('a:port'))))
+cs.sendall(vim.eval('a:msg'))
+cs.close()
+EOF
+endfunction
+
+function! GetSelected()
+  let tmp = @@
+  silent normal gvy
+  let selected = @@
+  let @@ = tmp
+  return selected
+endfunction
+
+command! -nargs=1 PSend call Send('localhost', <args>, GetSelected())
+vnoremap cp <Esc>:PSend port<CR>
+```
+
 ## License
 
 Copyright (c) 2014 Yoshinori Kohyama.  Distributed under the BSD 3-Clause License.  See the file LICENSE.md.
